@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">PictureSelector</string>
+    <string name="title_name">图片选择器</string>
+    <string name="send_btn">选择</string>
+</resources>
