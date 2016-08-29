@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:orientation="horizontal"
+    android:padding="10dp"
+    android:layout_height="wrap_content">
+    <org.nestling.guo.pictureselector.view.SquareImageView
+        android:layout_width="0dp"
+        android:id="@+id/folder_icon"
+        android:src="@drawable/loading"
+        android:background="@drawable/image_border"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.2"/>
+    <LinearLayout
+        android:layout_marginLeft="5dp"
+        android:paddingLeft="5dp"
+        android:layout_gravity="center_vertical"
+        android:gravity="center_vertical"
+        android:layout_weight="0.6"
+        android:orientation="vertical"
+        android:layout_width="0dp"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/folder_name"
+            android:layout_width="match_parent"
+            android:textSize="20dp"
+            android:gravity="center_vertical"
+            android:text="@string/title_name"
+            android:layout_weight="0.6"
+            android:layout_height="0dp" />
+        <TextView
+            android:id="@+id/image_num"
+            android:textSize="15dp"
+            android:text="128"
+            android:textColor="#C0C0C0"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_weight="0.4"
+            android:layout_height="0dp" />
+    </LinearLayout>
+    <ImageView
+        android:id="@+id/selected"
+        android:layout_weight="0.2"
+        android:src="@drawable/seleted"
+        android:layout_width="0dp"
+        android:layout_gravity="center_vertical"
+        android:layout_height="wrap_content" />
+</LinearLayout>
+    <View
+        android:background="#C0C0C0"
+        android:layout_width="match_parent"
+        android:layout_height="0.8dp" />
+</LinearLayout>
