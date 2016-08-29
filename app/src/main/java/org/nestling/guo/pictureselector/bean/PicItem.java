@@ -139,4 +139,10 @@ public class PicItem {
     public boolean isSelected(){
         return this.selected;
     }
+
+    public String getPath(){
+        return this.path;
+    }
+
+
 }

@@ -2,4 +2,6 @@
     <string name="app_name">PictureSelector</string>
     <string name="title_name">图片选择器</string>
     <string name="send_btn">选择</string>
+    <string name="all_items">所有图片</string>
+    <string name="error_select_tip">选择数量超出最大范围</string>
 </resources>

@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import org.nestling.guo.pictureselector.PictureSelectorActivity;
 import org.nestling.guo.pictureselector.R;
 import org.nestling.guo.pictureselector.bean.PicFolder;
 import org.nestling.guo.pictureselector.bean.PicItem;
@@ -122,6 +123,13 @@ public class NestlingPictureAdapter extends RecyclerView.Adapter<RecyclerView.Vi
         public CameraViewHolder(View itemView) {
             super(itemView);
             camera = (SquareImageView)itemView.findViewById(R.id.camera);
+            camera.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    PictureSelectorActivity psa = (PictureSelectorActivity)mContxt;
+                    psa.selectPictureFromCamera();
+                }
+            });
         }
     }
 
@@ -145,10 +153,16 @@ public class NestlingPictureAdapter extends RecyclerView.Adapter<RecyclerView.Vi
                         select.setImageResource(R.drawable.square_unchecked);
                         picture.setColorFilter(null);
                         pi.cancel();
+                        PictureSelectorActivity psa = (PictureSelectorActivity)mContxt;
+                        psa.removeSelectedPic(pi);
                     }else{
-                        select.setImageResource(R.drawable.square_checked);
-                        picture.setColorFilter(Color.parseColor("#77000000"));
-                        pi.selecte();
+                        PictureSelectorActivity psa = (PictureSelectorActivity)mContxt;
+                        psa.removeSelectedPic(pi);
+                        if(psa.addSelectedPic(pi)) {
+                            select.setImageResource(R.drawable.square_checked);
+                            picture.setColorFilter(Color.parseColor("#77000000"));
+                            pi.selecte();
+                        }
                     }
                 }
             });
